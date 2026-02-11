@@ -1,0 +1,99 @@
+/* VARIABLES */
+:root {
+  --main-green: hsl(150, 100%, 66%);
+  --advice-text: hsl(193, 38%, 86%);
+  --body-bg: hsl(218, 23%, 16%);
+  --card-bg: hsl(217, 19%, 24%);
+}
+/* FONTS */
+@font-face {
+  font-family: "Manrope";
+  src: url("../assets/fonts/Manrope/Manrope-VariableFont_wght.ttf");
+  /* Weights: 800 */
+}
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* BASIC STYLES */
+body {
+  background-color: var(--body-bg);
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope";
+}
+.advice-container {
+  background-color: var(--card-bg);
+  border-radius: 1em;
+  max-width: 350px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.advice-number {
+  margin-bottom: 1em;
+  color: var(--main-green);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+.advice-text {
+  text-align: center;
+  color: var(--advice-text);
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+.divider-container {
+  margin-bottom: 2em;
+}
+.generate-advice-btn {
+  position: absolute;
+  bottom: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--main-green);
+  cursor: pointer;
+  transition: box-shadow 0.3s linear;
+}
+.generate-advice-btn img {
+  max-width: 100%;
+  transform: rotateX(0);
+  transition: transform 0.3s ease;
+}
+.generate-advice-btn:active img {
+  transform: rotate(360deg);
+}
+.generate-advice-btn:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+.generate-advice-btn:enabled {
+  background-color: var(--main-green);
+}
+.generate-advice-btn:hover {
+  box-shadow: 0 0 25px var(--main-green);
+}
+
+/* DESKTOP STYLES */
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+  .advice-container {
+    max-width: 500px;
+  }
+}
